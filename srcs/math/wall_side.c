@@ -6,7 +6,7 @@
 /*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 10:59:10 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 17:01:03 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 08:46:57 by pswirgie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,6 @@ void	cast_ray(t_data *data)
 		data->render.perp_wall_dist = render->side_x - render->delta_x;
 	else
 		data->render.perp_wall_dist = render->side_y - render->delta_y;
-	data->wall.map_x = (int)data->player.pos_y;
-	data->wall.map_y = (int)data->player.pos_x;
 	data->wall.wall_side = side;
 	data->wall.distance_x = data->player.pos_y + render->perp_wall_dist
 		* render->ray_dir_x;
