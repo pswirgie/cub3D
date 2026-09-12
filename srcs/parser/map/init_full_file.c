@@ -92,11 +92,11 @@ int	init_full_file(t_data *data)
 {
 	if (get_lines_columns(data))
 		return (1);
-	if (data->map.lines < 10 || data->map.columns < 6
+	if (data->map.lines < 9 || data->map.columns < 6
 		|| data->map.lines > 300 || data->map.columns > 300)
 	{
-		ft_display_error("File size is invalid,"
-			" must be between 6x10 and 300x300 (inclusive)");
+		ft_display_error("File too small: a valid scene needs at least"
+			" 9 lines (4 textures, 2 colors, 3+ map lines)");
 		return (1);
 	}
 	data->map.full_file = (char **)malloc((sizeof(char *))
