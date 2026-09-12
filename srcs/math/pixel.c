@@ -6,13 +6,11 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 10:04:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/12 08:24:48 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/12 09:18:10 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
-#include <stdlib.h>
-#include <math.h>
 
 void	put_pixel(t_data *data, int x, int y, int color)
 {
