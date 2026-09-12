@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rgb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 12:41:08 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 11:56:55 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 09:40:39 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	set_colors(t_data *data, char **ceiling, char **ground)
 		|| data->ceiling.b == -1 || data->ground.r == -1
 		|| data->ground.g == -1 || data->ground.b == -1)
 		return (1);
-	data->ceiling.color = create_trgb(1, data->ceiling.r,
+	data->ceiling.color = create_trgb(0, data->ceiling.r,
 			data->ceiling.g, data->ceiling.b);
-	data->ground.color = create_trgb(1, data->ground.r,
+	data->ground.color = create_trgb(0, data->ground.r,
 			data->ground.g, data->ground.b);
 	return (0);
 }
