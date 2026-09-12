@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixel.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 10:04:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 11:52:40 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 08:24:48 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	put_pixel(t_data *data, int x, int y, int color)
 
 /*
 * - h_wall: height of the line to draw on screen
-* - draw_start / draw_end: 
+* - draw_start / draw_end:
 *  lowest and highest pixel in which the wall is visible
 */
 static void	get_wall_start_end(t_render *render)
@@ -51,8 +51,8 @@ static void	render_wall(t_data *data, t_render *render, int *y)
 		render->tex_y = (int)render->tex_pos;
 		if (render->tex_y < 0)
 			render->tex_y = 0;
-		if (render->tex_y >= data->north.height)
-			render->tex_y = data->north.height - 1;
+		if (render->tex_y >= render->actual_texture->height)
+			render->tex_y = render->actual_texture->height - 1;
 		render->tex_pos += render->step;
 		color = get_pixel(render->actual_texture, render->tex_x, render->tex_y);
 		put_pixel(data, *y, render->x, color);
