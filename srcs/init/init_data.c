@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 09:36:44 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/07/30 18:16:36 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 07:37:48 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ static void	*init_window(t_data *data)
 int	ft_init_game(t_data *data)
 {
 	data->mlx = mlx_init();
-	if (load_textures(data))
-		return (1);
-	mlx_do_key_autorepeatoff(data->mlx);
 	if (!data->mlx)
 	{
 		ft_mlx_error();
 		return (1);
 	}
+	mlx_do_key_autorepeatoff(data->mlx);
+	if (load_textures(data))
+		return (1);
 	data->win = init_window(data);
 	if (!data->win)
 	{
