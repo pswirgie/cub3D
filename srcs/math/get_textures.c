@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:29:06 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/12 07:53:05 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/12 08:06:23 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	coordinates_textures_north_south(t_data *data,
 	if (data->render.tex_x >= tex->width)
 		data->render.tex_x = tex->width - 1;
 	if (tex == &data->north)
-		data->render.tex_x =tex->width - 1 - data->render.tex_x;
+		data->render.tex_x = tex->width - 1 - data->render.tex_x;
 	data->render.step = (double)tex->height / (double)h_wall;
 	data->render.tex_pos = (draw_start - HEIGHT_WINDOW / 2 + h_wall / 2)
 		* data->render.step;
@@ -47,7 +47,7 @@ static void	coordinates_textures_north_south(t_data *data,
 static void	coordinates_textures_est_west(t_data *data,
 	int h_wall, double draw_start)
 {
-	t_image *tex;
+	t_image	*tex;
 	double	wall_x;
 
 	tex = data->render.actual_texture;
@@ -100,8 +100,6 @@ static void	select_texture(t_data *data, t_render *render)
 void	get_textures(t_data *data, t_render *render)
 {
 	select_texture(data, render);
-
-
 	if (data->wall.wall_side == 0)
 		coordinates_textures_north_south(data,
 			render->h_wall, render->draw_start);
