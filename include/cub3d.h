@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/12 09:26:54 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/12 10:41:27 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ typedef struct s_wall
 	double			distance_y;
 	int				wall_side;
 }				t_wall;
+
+typedef struct s_flood
+{
+	int	*stack;
+	int	top;
+	int	cols;
+}	t_flood;
 
 typedef struct s_render
 {
