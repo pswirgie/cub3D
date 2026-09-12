@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 09:36:44 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/09/12 07:37:48 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/12 09:26:05 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 static int	load_textures(t_data *data)
 {
-	load_image(data, &data->north);
-	load_image(data, &data->south);
-	load_image(data, &data->east);
-	load_image(data, &data->weast);
+	if (load_image(data, &data->north) || load_image(data, &data->south)
+		|| load_image(data, &data->east) || load_image(data, &data->weast))
+		return (1);
 	return (0);
 }
+
 
 static void	*init_window(t_data *data)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/12 08:47:00 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 09:26:54 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,7 +206,7 @@ int		skip_spaces(char *str);
 int		open_fd(char *file, int *fd);
 int		is_arg(char *str);
 int		is_space_or_nl(char c);
-void	load_image(t_data *data, t_image *dir);
+int		load_image(t_data *data, t_image *dir);
 int		create_trgb(int t, int r, int g, int b);
 int		erase_cpy(char **dst, char **src);
 
