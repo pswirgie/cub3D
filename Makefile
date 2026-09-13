@@ -6,7 +6,7 @@
 #    By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:40:53 by pswirgie          #+#    #+#              #
-#    Updated: 2026/09/13 09:53:14 by nbaudoin         ###   ########.fr        #
+#    Updated: 2026/09/13 12:58:37 by nbaudoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ MAKEFLAGS	+= --no-print-directory
 BUILD_DIR	:= .cub3D
 
 NAME		:= cub3D
+
+BONUS_NAME	:= cub3D_bonus
+BONUS_DIR	:= .cub3D_bonus
 
 # Includes
 INCLUDES	:=								\
@@ -74,11 +77,12 @@ UTILS_SRCS	= $(UTILS_DIR)/fill_null.c							\
 
 SRCS		:= srcs/main.c $(PARSER_SRCS) $(ERROR_SRCS) ${FREE_SRCS}	\
 				${INIT_SRCS} $(UTILS_SRCS) ${EVENT_SRCS} ${MATH_SRCS}	\
-				${MOVE_SRCS} ${EVENT_UI_SRCS}
+				${MOVE_SRCS} ${EVENT_UI_SRCS} srcs/bonus/minimap_bonus.c
+
+BONUS_SRCS	:= $(SRCS)
+BONUS_OBJS	:= $(BONUS_SRCS:%.c=$(BONUS_DIR)/%.o)
 
 OBJS		:= $(SRCS:%.c=$(BUILD_DIR)/%.o)
-
-
 
 # ==================  LIBS  ================== #
 
@@ -95,8 +99,6 @@ GNL			:= $(DIR_GNL)/get_next_line.a
 # Libft
 DIR_LIB		:= lib/libft
 LIBFT		:= $(DIR_LIB)/libft.a
-
-
 
 # ================= COMMANDS ================= #
 
@@ -119,6 +121,18 @@ $(NAME): $(OBJS) $(MLX) $(LIBFT) $(GNL)
 	@$(CC) $(CFLAGS) $(OBJS) $(GNL) $(LIBFT) $(FLAGS_MLX) $(ADD_LIB) -o $(NAME)
 	@echo $(GREEN)"\n✨ $(NAME) build created. ✨\n"$(NC)
 
+# bonus part
+bonus: $(BONUS_NAME)
+	@echo $(GREEN)"💫 Bonus compiled 💫\n"$(NC)
+
+$(BONUS_NAME): $(BONUS_OBJS) $(MLX) $(LIBFT) $(GNL)
+	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(GNL) $(LIBFT) $(FLAGS_MLX) $(ADD_LIB) -o $(BONUS_NAME)
+	@echo $(GREEN)"\n✨ cub3D_bonus build created. ✨\n"$(NC)
+
+$(BONUS_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -D BONUS $(INCLUDES) -c $< -o $@
+
 # Compilation .c -> .o
 $(BUILD_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
@@ -128,17 +142,17 @@ clean:
 	@if [ -f "$(DIR_MLX)/Makefile" ]; then $(MAKE) -C $(DIR_MLX) clean -s; fi
 	@$(MAKE) -C $(DIR_LIB) clean -s
 	@$(MAKE) -C $(DIR_GNL) clean -s
-	@rm -rf $(BUILD_DIR)
+	@rm -rf $(BUILD_DIR) $(BONUS_DIR)
 	@echo $(GREEN)"$(NAME) build is clean. 🧹"$(NC)
 
 fclean: clean
 	@$(MAKE) -C $(DIR_LIB) fclean -s
 	@$(MAKE) -C $(DIR_GNL) fclean -s
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BONUS_NAME)
 	@echo $(GREEN)"$(NAME) library is clean. 🧹"$(NC)
 
 re: fclean
 	$(MAKE) all
 
 .SILENT:
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

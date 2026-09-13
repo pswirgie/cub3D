@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/13 10:04:35 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/13 12:55:26 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,5 +213,20 @@ int		load_image(t_data *data, t_image *dir);
 int		create_trgb(int t, int r, int g, int b);
 int		erase_cpy(char **dst, char **src);
 void	print_invalid_args(void);
+
+void	draw_minimap(t_data *data);
+
+# ifdef BONUS
+
+/* minimap (bonus) */
+#  define MINI_MAX 220
+#  define MINI_MARGIN 10
+#  define MINI_WALL 0x222831
+#  define MINI_FLOOR 0xEEEEEE
+#  define MINI_PLAYER 0xE84545
+
+
+# endif
+
 
 #endif

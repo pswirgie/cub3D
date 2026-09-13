@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:41:36 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 17:00:15 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 12:55:02 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ int	render(t_data *data)
 		put_texture_pixel(data, x);
 		x++;
 	}
+	draw_minimap(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->render.image, 0, 0);
 	return (0);
 }
 
 /*
-* move and rotate here combined with keyrelease allow continuous 
+* move and rotate here combined with keyrelease allow continuous
 * movement and rotation while a key is held down
 */
 int	refresh_map(t_data *data)
