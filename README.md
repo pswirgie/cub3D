@@ -9,9 +9,9 @@
 </div>
 
 - [Cub3D](#cub3d)
-  - [1. Description](#1-description)
-  - [2. Instructions](#2-instructions)
-  - [3. Ressources](#3-ressources)
+	- [1. Description](#1-description)
+	- [2. Instructions](#2-instructions)
+	- [3. Ressources](#3-ressources)
 
 <!-- new lines -->
 <br><br>
@@ -48,5 +48,10 @@ Cub3D is a graphics programming project that introduces raycasting techniques, i
 - Understanding wall direction/orientation logic
 - Implementing texture rendering
 - Correct README
+- Auditing the code and guiding robustness fixes also
+  	one recursive to iterative flood-fill factor and cleanup;
+- A test pass (norminette, valgrind, edge-case maps).
+
+Every change was reviewed, understood, applied by hand, and peer-checked before commit.
 
 [back to top](#top)
