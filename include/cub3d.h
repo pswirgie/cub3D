@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/12 10:41:27 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/13 09:56:11 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,13 +216,6 @@ int		is_space_or_nl(char c);
 int		load_image(t_data *data, t_image *dir);
 int		create_trgb(int t, int r, int g, int b);
 int		erase_cpy(char **dst, char **src);
-
-// Debug
-
-void	print_array(char **array);
-void	print_directions(t_data *data);
-void	print_rgb(t_data *data);
 void	print_invalid_args(void);
-void	print_player_info(t_data *data);
 
 #endif

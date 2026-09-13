@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+         #
+#    By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:40:53 by pswirgie          #+#    #+#              #
-#    Updated: 2026/07/30 19:17:54 by pswirgie         ###   ########.fr        #
+#    Updated: 2026/09/13 09:53:14 by nbaudoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,6 @@ INIT_SRCS	= ${INIT_DIR}/init_data.c	\
 EVENT_UI_DIR= srcs/events/ui
 EVENT_UI_SRCS= ${EVENT_UI_DIR}/close.c
 
-ERROR_DIR	= srcs/error
-ERROR_SRCS	= $(ERROR_DIR)/error.c		\
-			$(ERROR_DIR)/debug.c
 
 EVENT_DIR	= srcs/events
 EVENT_SRCS	= ${EVENT_DIR}/hook_manager.c
@@ -67,7 +64,6 @@ PARSER_SRCS	= $(PARSER_DIR)/args.c					\
 
 ERROR_DIR	= srcs/error
 ERROR_SRCS	= $(ERROR_DIR)/error.c		\
-			$(ERROR_DIR)/debug.c
 
 UTILS_DIR	= srcs/utils
 UTILS_SRCS	= $(UTILS_DIR)/fill_null.c							\
