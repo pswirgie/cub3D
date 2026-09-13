@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 12:35:26 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/09/13 13:49:42 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/13 14:36:15 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,25 +54,26 @@ void	draw_cell(t_data *data, int sx, int sy, int color)
 	}
 }
 
-void draw_all_cells(t_data *data)
+void	draw_all_cells(t_data *data, int cell)
 {
-	int max_row;
-	int max_col;
-	int row;
+	int	row;
 	int	col;
+	int	sx;
+	int	sy;
 
-	max_row = data->map.lines;
-	max_col = data->map.columns;
 	row = 0;
-	while(row < max_row)
+	while (data->map.maze[row])
 	{
 		col = 0;
-		while (col < max_col)
+		while (data->map.maze[row][col])
 		{
-			if (data->map.maze[row][col] == 1)
-				draw_cell(data, row, col, MINI_WALL);
-			else if (data->map.maze[row][col] == 0)
-				draw_cell(data, MINI_MARGIN + row, MINI_MARGIN + col, MINI_FLOOR);
+			sx = MINI_MARGIN + col * cell;
+			sy = MINI_MARGIN + row * cell;
+			if (data->map.maze[row][col] == '1' ||
+				data->map.maze[row][col] == 'X')
+				draw_cell(data, sx, sy, MINI_WALL);
+			else
+				draw_cell(data, sx, sy, MINI_FLOOR);
 			col++;
 		}
 		row++;
@@ -81,15 +82,24 @@ void draw_all_cells(t_data *data)
 
 void	draw_minimap(t_data *data)
 {
+	double	px;
+	double	py;
+	int		cell;
+	int		i;
 
-	draw_all_cells(data); // un carré rouge à (colonne 50, ligne 50)
+	cell = cell_size(data);
+	px = MINI_MARGIN + data->player.pos_x * cell;
+	py = MINI_MARGIN + data->player.pos_y * cell;
+	draw_all_cells(data, cell);
+	draw_cell(data, (int)px, (int)py, MINI_PLAYER);
+	i = 0;
+	while (i < 4 * cell)
+	{
+		put_pixel(data, (int)py + data->player.dir_x * i + 3,
+			(int)px + data->player.dir_y * i + 3, MINI_PLAYER);
+		i++;
+	}
 }
-
-// func qui parcourt et appell le remplissage carré avec la bnne couleur
-// func dessine le joueur : carré/point à MARGIN + pos * cell
-// draw minimap qui orchestre
-
-// on l'appelle dans render() - > raycasting.c
 
 #else
 
