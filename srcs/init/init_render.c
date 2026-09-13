@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:01:54 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 17:04:01 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 11:21:14 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static void	start_east_weast(t_data *data)
 	{
 		data->player.dir_y = 1;
 		data->player.dir_x = 0;
-		data->render.plane_x = 0.66;
+		data->render.plane_x = CAM_PLANE;
 		data->render.plane_y = 0;
 	}
 	else if (data->player.direction == 'W')
 	{
 		data->player.dir_y = -1;
 		data->player.dir_x = 0;
-		data->render.plane_x = -0.66;
+		data->render.plane_x = -CAM_PLANE;
 		data->render.plane_y = 0;
 	}
 }
@@ -38,14 +38,14 @@ static void	start_north_south(t_data *data)
 		data->player.dir_y = 0;
 		data->player.dir_x = -1;
 		data->render.plane_x = 0;
-		data->render.plane_y = 0.66;
+		data->render.plane_y = CAM_PLANE;
 	}
 	else if (data->player.direction == 'S')
 	{
 		data->player.dir_y = 0;
 		data->player.dir_x = 1;
 		data->render.plane_x = 0;
-		data->render.plane_y = -0.66;
+		data->render.plane_y = -CAM_PLANE;
 	}
 }
 

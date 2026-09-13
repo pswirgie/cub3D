@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 16:46:20 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/09/13 10:25:07 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/13 11:20:55 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@
 
 // Math
 
-# define FOV 90
+# define CAM_PLANE 0.66
 # define MOVE_SPEED 20.00
 # define ROT_SPEED 0.03
 
