@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   init_full_file.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:57:16 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/09 17:57:16 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:37:17 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,7 @@ int	init_full_file(t_data *data)
 		ft_display_error("Map - init full_file - allocation memory failed");
 		return (1);
 	}
-	if (data->map.full_file)
-		fill_null(data->map.full_file, data->map.lines);
+	fill_null(data->map.full_file, data->map.lines);
 	if (init_map_content(data) || get_index_after_args(data))
 		return (1);
 	if (is_invalid_line(data, data->map.begin_maze))
