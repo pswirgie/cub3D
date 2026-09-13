@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 16:46:20 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/07/30 16:57:41 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:25:07 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,8 @@
 #  define ARROW_LEFT 65361
 # endif
 
-# ifndef ARROW_UP
-#  define ARROW_UP 65362
-# endif
-
 # ifndef ARROW_RIGHT
 #  define ARROW_RIGHT 65363
-# endif
-
-# ifndef ARROW_DOWN
-#  define ARROW_DOWN 65364
 # endif
 
 # ifndef KEY_A
@@ -47,14 +39,8 @@
 #  define KEY_S 115
 # endif
 
-# ifndef SPACE
-#  define SPACE 32
-# endif
-
 // UI
 
-# define MAX_WIDTH_WINDOW 1920
-# define MAX_HEIGHT_WINDOW 1080
 # define WIDTH_WINDOW 1280
 # define HEIGHT_WINDOW 720
 
@@ -65,6 +51,9 @@
 # ifndef EVENT_CLOSE
 #  define EVENT_CLOSE 17
 # endif
+
+# define KEY_PRESS 2
+# define KEY_RELEASE 3
 
 // Math
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 16:14:22 by nbaudoin          #+#    #+#             */
-/*   Updated: 2026/07/30 10:12:11 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:19:21 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	handle_keypress(int keycode, void *param)
 
 /*
 * Set the key to 0 when it is released, so the movement stops
-* Each key has its own state, allowing multiple keys to be 
+* Each key has its own state, allowing multiple keys to be
 * pressed at the same time
 * Example: turn left while moving forward
 */
@@ -77,13 +77,13 @@ int	handle_keyrelease(int keycode, void *param)
 	t_data	*data;
 
 	data = (t_data *)param;
-	if (keycode == 'w')
+	if (keycode == KEY_W)
 		data->key.w = 0;
-	if (keycode == 's')
+	if (keycode == KEY_S)
 		data->key.s = 0;
-	if (keycode == 'a')
+	if (keycode == KEY_A)
 		data->key.a = 0;
-	if (keycode == 'd')
+	if (keycode == KEY_D)
 		data->key.d = 0;
 	if (keycode == ARROW_LEFT)
 		data->key.left = 0;
@@ -100,8 +100,8 @@ int	handle_keyrelease(int keycode, void *param)
 */
 void	ft_init_hooks(t_data *data)
 {
-	mlx_hook(data->win, 2, 1L << 0, handle_keypress, data);
-	mlx_hook(data->win, 3, 1L << 1, handle_keyrelease, data);
-	mlx_hook(data->win, 17, 0, close_window, data);
+	mlx_hook(data->win, KEY_PRESS, 1L << 0, handle_keypress, data);
+	mlx_hook(data->win, KEY_RELEASE, 1L << 1, handle_keyrelease, data);
+	mlx_hook(data->win, EVENT_CLOSE, 0, close_window, data);
 	mlx_loop_hook(data->mlx, refresh_map, data);
 }

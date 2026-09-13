@@ -6,7 +6,7 @@
 /*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/13 09:56:11 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:04:35 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,11 @@ typedef struct s_player
 {
 	int				x_start_p;
 	int				y_start_p;
-	int				has_turn;
 	double			pos_x;
 	double			pos_y;
 	char			direction;
 	double			dir_x;
 	double			dir_y;
-	double			plane_x;
-	double			plane_y;
 }			t_player;
 
 typedef struct s_color
@@ -131,7 +128,6 @@ typedef struct s_data
 	t_color			ceiling;
 	t_color			ground;
 	t_player		player;
-	t_image			image;
 	t_map			map;
 	t_keys			key;
 	t_render		render;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 14:50:49 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 10:48:54 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:04:14 by nbaudoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	rotate_left(t_data *data)
 	player = &data->player;
 	if (data->key.left)
 	{
-		data->player.has_turn = 1;
 		old_dir_x = player->dir_x;
 		player->dir_x = player->dir_x * cos(ROT_SPEED)
 			- player->dir_y * sin(ROT_SPEED);
@@ -45,7 +44,6 @@ void	rotate_player(t_data *data)
 	player = &data->player;
 	if (data->key.right)
 	{
-		data->player.has_turn = 1;
 		old_dir_x = player->dir_x;
 		player->dir_x = player->dir_x * cos(-ROT_SPEED)
 			- player->dir_y * sin(-ROT_SPEED);
