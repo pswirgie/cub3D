@@ -6,7 +6,7 @@
 /*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/07/30 16:57:06 by pswirgie         ###   ########.fr       */
+/*   Updated: 2026/09/12 08:47:00 by pswirgie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_wall
 {
 	double			distance_x;
 	double			distance_y;
-	int				map_x;
-	int				map_y;
 	int				wall_side;
 }				t_wall;
 
