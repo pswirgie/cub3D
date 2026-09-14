@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pswirgie <pswirgie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 13:50:07 by pswirgie          #+#    #+#             */
-/*   Updated: 2026/09/13 13:22:11 by nbaudoin         ###   ########.fr       */
+/*   Updated: 2026/09/14 18:53:42 by pswirgie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,8 +225,6 @@ void	draw_minimap(t_data *data);
 #  define MINI_FLOOR 0xEEEEEE
 #  define MINI_PLAYER 0xE84545
 
-
 # endif
-
 
 #endif
