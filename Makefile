@@ -6,7 +6,7 @@
 #    By: nbaudoin <nbaudoin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:40:53 by pswirgie          #+#    #+#              #
-#    Updated: 2026/09/13 12:58:37 by nbaudoin         ###   ########.fr        #
+#    Updated: 2026/09/16 11:03:26 by nbaudoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,9 +106,6 @@ all: $(NAME)
 	@echo $(GREEN)"💫 All compiled 💫\n"$(NC)
 
 $(MLX):
-	@if [ ! -f "$(DIR_MLX)/Makefile" ]; then \
-		git submodule update --init $(DIR_MLX); \
-	fi
 	@$(MAKE) -C $(DIR_MLX) -s
 
 $(LIBFT):
